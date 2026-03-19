@@ -170,7 +170,7 @@ export default function Home() {
               </form>
 
               {showSuggestions && suggestions.length > 0 && (
-                <ul className="absolute z-10 w-full bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-lg mt-1 max-h-60 overflow-y-auto shadow-lg">
+                <ul className="absolute z-10 w-full bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-lg top-full left-0 max-h-60 overflow-y-auto shadow-lg">
                   {suggestions.map((suggestion, index) => (
                     <li
                       key={index}
