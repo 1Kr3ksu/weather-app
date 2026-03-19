@@ -18,7 +18,7 @@ https://1kr3ksu.github.io/weather-app/
 - OpenWeather API
 
 ## 📸 Screenshots
-(tu wrzuć screena aplikacji)
+![Weather App](screenshot.png)
 
 ## ⚙️ Setup
 
