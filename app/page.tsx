@@ -149,16 +149,31 @@ export default function Home() {
         <div className="container-max py-6 sm:py-10 md:py-12 space-y-6 sm:space-y-8">
           <section className="w-full">
             <div className="bg-white/95 dark:bg-zinc-900 p-4 sm:p-6 rounded-2xl shadow-xl w-full max-w-2xl mx-auto">
-              <form className="flex flex-col sm:flex-row gap-3 relative" onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  placeholder="Wpisz nazwę miasta"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  onFocus={() => setShowSuggestions(suggestions.length > 0)}
-                  onBlur={() => setTimeout(() => setShowSuggestions(false), 200)} // Delay to allow click on suggestion
-                  className="flex-1 min-w-0 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-zinc-800 dark:border-zinc-700"
-                />
+              <form className="flex flex-col sm:flex-row gap-3" onSubmit={handleSubmit}>
+                <div className="relative flex-1">
+                  <input
+                    type="text"
+                    placeholder="Wpisz nazwę miasta"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    onBlur={() => setTimeout(() => setShowSuggestions(false), 200)} // Delay to allow click on suggestion
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-zinc-800 dark:border-zinc-700"
+                  />
+
+                  {showSuggestions && suggestions.length > 0 && (
+                    <ul className="absolute z-10 w-full bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-lg top-full left-0 max-h-60 overflow-y-auto shadow-lg">
+                      {suggestions.map((suggestion, index) => (
+                        <li
+                          key={index}
+                          onClick={() => handleSuggestionClick(suggestion)}
+                          className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-700 cursor-pointer"
+                        >
+                          {suggestion}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
 
                 <button
                   type="submit"
@@ -168,20 +183,6 @@ export default function Home() {
                   {loading ? "Ładowanie..." : "Szukaj"}
                 </button>
               </form>
-
-              {showSuggestions && suggestions.length > 0 && (
-                <ul className="absolute z-10 w-full bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-lg top-full left-0 max-h-60 overflow-y-auto shadow-lg">
-                  {suggestions.map((suggestion, index) => (
-                    <li
-                      key={index}
-                      onClick={() => handleSuggestionClick(suggestion)}
-                      className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-700 cursor-pointer"
-                    >
-                      {suggestion}
-                    </li>
-                  ))}
-                </ul>
-              )}
 
               {error && (
                 <div className="text-red-500 mt-3 text-center text-sm">
