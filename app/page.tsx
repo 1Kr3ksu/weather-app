@@ -134,33 +134,50 @@ export default function Home() {
 
             {!loading && weather && (
               <div className="bg-white dark:bg-zinc-900 p-5 sm:p-8 rounded-2xl shadow-2xl text-center w-full max-w-2xl mx-auto">
-                <div className="text-xl sm:text-2xl font-bold mb-4 break-words">
+                <div className="text-xl sm:text-2xl font-bold mb-6 break-words">
                   {weather.location.name}, {weather.location.country}
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-4">
-                  <span className="text-4xl sm:text-5xl font-bold leading-none">
-                    {weather.current.temp_c}°C
-                  </span>
-
-                  <Image
-                    src={weather.current.condition.icon}
-                    alt={weather.current.condition.text}
-                    width={80}
-                    height={80}
-                    className="w-16 h-16 sm:w-20 sm:h-20"
-                  />
-                </div>
-
-                <div className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4">
-                  {weather.current.condition.text}
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-600 dark:text-gray-300 text-left">
-                  <div className="rounded-lg bg-gray-50 dark:bg-zinc-800 px-3 py-2">Odczuwalna: {weather.current.feelslike_c}°C</div>
-                  <div className="rounded-lg bg-gray-50 dark:bg-zinc-800 px-3 py-2">Wilgotność: {weather.current.humidity}%</div>
-                  <div className="rounded-lg bg-gray-50 dark:bg-zinc-800 px-3 py-2">Wiatr: {weather.current.wind_kph} km/h</div>
-                  <div className="rounded-lg bg-gray-50 dark:bg-zinc-800 px-3 py-2">Ciśnienie: {weather.current.pressure_mb} hPa</div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="rounded-lg bg-gray-50 dark:bg-zinc-800 px-4 py-3 text-center">
+                    <div className="text-2xl mb-1">🌡️</div>
+                    <div className="font-semibold">Temperatura</div>
+                    <div className="text-lg font-bold">{weather.current.temp_c}°C</div>
+                  </div>
+                  <div className="rounded-lg bg-gray-50 dark:bg-zinc-800 px-4 py-3 text-center">
+                    <div className="text-2xl mb-1">☁️</div>
+                    <div className="font-semibold">Pogoda</div>
+                    <div className="text-lg font-bold flex items-center justify-center gap-2">
+                      <Image
+                        src={weather.current.condition.icon}
+                        alt={weather.current.condition.text}
+                        width={32}
+                        height={32}
+                        className="w-8 h-8"
+                      />
+                      {weather.current.condition.text}
+                    </div>
+                  </div>
+                  <div className="rounded-lg bg-gray-50 dark:bg-zinc-800 px-4 py-3 text-center">
+                    <div className="text-2xl mb-1">💧</div>
+                    <div className="font-semibold">Wilgotność</div>
+                    <div className="text-lg font-bold">{weather.current.humidity}%</div>
+                  </div>
+                  <div className="rounded-lg bg-gray-50 dark:bg-zinc-800 px-4 py-3 text-center">
+                    <div className="text-2xl mb-1">🌬️</div>
+                    <div className="font-semibold">Wiatr</div>
+                    <div className="text-lg font-bold">{weather.current.wind_kph} km/h</div>
+                  </div>
+                  <div className="rounded-lg bg-gray-50 dark:bg-zinc-800 px-4 py-3 text-center">
+                    <div className="text-2xl mb-1">📉</div>
+                    <div className="font-semibold">Ciśnienie</div>
+                    <div className="text-lg font-bold">{weather.current.pressure_mb} hPa</div>
+                  </div>
+                  <div className="rounded-lg bg-gray-50 dark:bg-zinc-800 px-4 py-3 text-center">
+                    <div className="text-2xl mb-1">🌡️</div>
+                    <div className="font-semibold">Odczuwalna</div>
+                    <div className="text-lg font-bold">{weather.current.feelslike_c}°C</div>
+                  </div>
                 </div>
               </div>
             )}
