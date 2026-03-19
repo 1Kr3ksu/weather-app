@@ -1,27 +1,27 @@
-# 🌦️ WeatherApp
+# 🌤 Weather App
 
-Nowoczesna aplikacja pogodowa zbudowana w **Next.js 16** i **Tailwind CSS**.  
-Pozwala szybko sprawdzić aktualną pogodę dla wybranego miasta: temperaturę, warunki, wilgotność, wiatr i ciśnienie.
+Prosta aplikacja pogodowa, która pobiera aktualne dane pogodowe dla wybranego miasta.
 
-## ✨ Funkcje
+## 🔗 Demo
+https://1kr3ksu.github.io/weather-app/
 
-- 🔎 wyszukiwanie pogody po nazwie miasta
-- 🌡️ aktualna temperatura i warunki pogodowe
-- 💨 dodatkowe dane: wilgotność, wiatr, ciśnienie, temperatura odczuwalna
-- 📱 w pełni responsywny interfejs (mobile / tablet / desktop)
-- 🚀 automatyczny deployment na **GitHub Pages** (GitHub Actions)
-- 🎨 nowoczesny UI + favicon + web manifest
+## ✨ Features
+- sprawdzanie pogody dla dowolnego miasta
+- aktualna temperatura i warunki
+- dynamiczne dane z API
+- szybki i prosty UI
 
-## 🛠️ Technologie
+## 🛠 Tech Stack
+- HTML
+- tailwindcss
+- TypeScript
+- OpenWeather API
 
-- [Next.js](https://nextjs.org/)
-- [React](https://react.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [WeatherAPI](https://www.weatherapi.com/)
+## 📸 Screenshots
+(tu wrzuć screena aplikacji)
 
-## ▶️ Uruchomienie lokalnie
+## ⚙️ Setup
 
+1. Sklonuj repo:
 ```bash
-npm install
-npm run dev
+git clone https://github.com/1Kr3ksu/weather-app.git
